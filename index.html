@@ -22,52 +22,69 @@
     </style>
   </head>
 
-  <body class="bg-white text-gray-900">
-    <!-- Header -->
-    <header class="bg-[#0B1B34] py-4 md:py-6 shadow-md z-50" style="box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <img src="./recursos/logoblanco.png" alt="Base Cero Logo" class="w-32 md:w-40" />
-        <nav class="space-x-4 text-center md:text-left">
-          <a href="#servicios" class="text-white hover:text-[#dc7c40] block md:inline">Servicios</a>
-          <a href="#equipo" class="text-white hover:text-[#dc7c40] block md:inline">Nosotros</a>
-          <a href="#trabajos" class="text-white hover:text-[#dc7c40] block md:inline">Trabajos</a>
-        </nav>
-      </div>
-    </header>
+    <body class="bg-white text-gray-900 pt-20">
+   <!-- Header -->
+<header class="bg-[#0B1B34] py-4 md:py-6 shadow-md z-50 fixed top-0 left-0 w-full" style="box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+    <!-- Logo -->
+    <img src="./recursos/logoblanco.png" alt="Base Cero Logo" class="w-32 md:w-40" />
 
-    <!-- Hero -->
-    <section class="relative text-black py-20 md:py-28 text-center overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <img src="./recursos/3335522.jpg" alt="Fondo Hero" class="w-full h-full object-cover opacity-10" />
-      </div>
+    <!-- Botón hamburguesa (solo en mobile) -->
+    <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
 
-      <div class="relative z-10 max-w-4xl mx-auto px-6" data-aos="fade-up">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Impulsamos tu negocio con
-          <span id="typing" style="color:#dc7c40;" class="font-extrabold"></span>
-        </h1>
-        <p class="text-lg sm:text-xl md:text-2xl mb-8">
-          Te anticipamos al futuro, te incluimos todo lo que vas a necesitar para escalar y que nadie te dice.
-        </p>
-        <a href="#servicios"
-           style="background-color:#0066FF; color:#ffffff;"
-           class="px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition">
-          Explora nuestros servicios
-        </a>
-      </div>
-    </section>
+    <!-- Navegación (desktop) -->
+    <nav class="hidden md:flex space-x-6 text-white">
+      <a href="#servicios" class="hover:text-[#dc7c40]">Servicios</a>
+      <a href="#equipo" class="hover:text-[#dc7c40]">Nosotros</a>
+      <a href="#trabajos" class="hover:text-[#dc7c40]">Trabajos</a>
+    </nav>
+  </div>
 
-    <style>
-      .blinking-cursor {
-        font-weight: bold;
-        color: #8dec88;
-        animation: blink 1s step-start infinite;
-      }
+  <!-- Menú móvil -->
+  <div id="mobile-menu" class="md:hidden px-4 pt-4 pb-6 hidden flex-col space-y-3 bg-[#0B1B34]">
+    <a href="#servicios" class="text-white hover:text-[#dc7c40] block">Servicios</a>
+    <a href="#equipo" class="text-white hover:text-[#dc7c40] block">Nosotros</a>
+    <a href="#trabajos" class="text-white hover:text-[#dc7c40] block">Trabajos</a>
+  </div>
+</header>
 
-      @keyframes blink {
-        50% { opacity: 0; }
-      }
-    </style>
+<!-- Hero -->
+<section class="relative text-black py-20 md:py-28 text-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src="./recursos/3335522.jpg" alt="Fondo Hero" class="w-full h-full object-cover opacity-10" />
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-6" data-aos="fade-up">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+      Impulsamos tu negocio con
+      <span id="typing" style="color:#dc7c40;" class="font-extrabold"></span>
+    </h1>
+    <p class="text-lg sm:text-xl md:text-2xl mb-8">
+      Te anticipamos al futuro, te incluimos todo lo que vas a necesitar para escalar y que nadie te dice.
+    </p>
+    <a href="#servicios"
+       style="background-color:#0066FF; color:#ffffff;"
+       class="px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition">
+      Explora nuestros servicios
+    </a>
+  </div>
+</section>
+
+<style>
+  .blinking-cursor {
+    font-weight: bold;
+    color: #8dec88;
+    animation: blink 1s step-start infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>
 
    <!-- Servicios -->
 <section id="servicios" class="py-24 bg-[#0B1B34] text-white">
@@ -223,6 +240,15 @@
     <script>
       AOS.init({ duration: 1000 });
     </script>
+    <!-- Script para el toggle del menú -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 
     <script>
       const palabras = ["diseño", "datos", "decisión"];
