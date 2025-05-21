@@ -23,20 +23,20 @@
   </head>
 
     <body class="bg-white text-gray-900 pt-20">
-   <!-- Header -->
-<header class="bg-[#0B1B34] py-4 md:py-6 shadow-md z-50 fixed top-0 left-0 w-full" style="box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+  <!-- Header -->
+<header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6">
     <!-- Logo -->
     <img src="./recursos/logoblanco.png" alt="Base Cero Logo" class="w-32 md:w-40" />
 
-    <!-- Botón hamburguesa (solo en mobile) -->
+    <!-- Botón hamburguesa (visible en móvil) -->
     <button id="menu-btn" class="md:hidden text-white focus:outline-none">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
-    <!-- Navegación (desktop) -->
+    <!-- Navegación en desktop -->
     <nav class="hidden md:flex space-x-6 text-white">
       <a href="#servicios" class="hover:text-[#dc7c40]">Servicios</a>
       <a href="#equipo" class="hover:text-[#dc7c40]">Nosotros</a>
@@ -45,12 +45,25 @@
   </div>
 
   <!-- Menú móvil -->
-  <div id="mobile-menu" class="md:hidden px-4 pt-4 pb-6 hidden flex-col space-y-3 bg-[#0B1B34]">
+  <div id="mobile-menu" class="md:hidden hidden flex-col bg-[#0B1B34] px-4 pb-4 space-y-3">
     <a href="#servicios" class="text-white hover:text-[#dc7c40] block">Servicios</a>
     <a href="#equipo" class="text-white hover:text-[#dc7c40] block">Nosotros</a>
     <a href="#trabajos" class="text-white hover:text-[#dc7c40] block">Trabajos</a>
   </div>
 </header>
+
+<!-- Script -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Espaciador para evitar que el header fijo tape el contenido -->
+<div class="h-[72px] md:h-[96px]"></div>
 
 <!-- Hero -->
 <section class="relative text-black py-20 md:py-28 text-center overflow-hidden">
@@ -240,15 +253,7 @@
     <script>
       AOS.init({ duration: 1000 });
     </script>
-    <!-- Script para el toggle del menú -->
-<script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('mobile-menu');
 
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
 
     <script>
       const palabras = ["diseño", "datos", "decisión"];
