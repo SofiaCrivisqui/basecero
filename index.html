@@ -52,15 +52,7 @@
   </div>
 </header>
 
-<!-- Script -->
-<script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
 
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
 
 <!-- Espaciador para evitar que el header fijo tape el contenido -->
 <div class="h-[72px] md:h-[96px]"></div>
@@ -286,5 +278,14 @@
 
       type();
     </script>
+    <!-- Script -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
   </body>
 </html>
