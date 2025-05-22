@@ -2,164 +2,227 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Base Cero - Soluciones Digitales</title>
 
-    <!-- Tailwind v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- Estilos personalizados -->
-    <style>
-      body { font-family: 'Inter', sans-serif; }
-      h1, h2, h3 { font-family: 'Sora', sans-serif; }
-    </style>
+  <head>
+  <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  img, section, div {
+    max-width: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+    /* Segundo bloque de estilos, ahora aquí */
+    .blinking-cursor {
+      font-weight: bold;
+      color: #8dec88;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+
   </head>
 
-    <body class="bg-white text-gray-900 pt-20">
-  <!-- Header -->
-<header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6">
-    <!-- Logo -->
-    <img src="./recursos/logoblanco.png" alt="Base Cero Logo" class="w-32 md:w-40" />
+  <body class="bg-white text-gray-900 pt-20">
+    <header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6"
+      >
+        <img src="./recursos/logoblanco.png" alt="Base Cero Logo" class="w-32 md:w-40" />
 
-    <!-- Botón hamburguesa (visible en móvil) -->
-    <button id="menu-btn" class="md:hidden text-white focus:outline-none">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
-    <!-- Navegación en desktop -->
-    <nav class="hidden md:flex space-x-6 text-white">
-      <a href="#servicios" class="hover:text-[#dc7c40]">Servicios</a>
-      <a href="#equipo" class="hover:text-[#dc7c40]">Nosotros</a>
-      <a href="#trabajos" class="hover:text-[#dc7c40]">Trabajos</a>
-    </nav>
-  </div>
-
-  <!-- Menú móvil -->
-  <div id="mobile-menu" class="md:hidden hidden flex-col bg-[#0B1B34] px-4 pb-4 space-y-3">
-    <a href="#servicios" class="text-white hover:text-[#dc7c40] block">Servicios</a>
-    <a href="#equipo" class="text-white hover:text-[#dc7c40] block">Nosotros</a>
-    <a href="#trabajos" class="text-white hover:text-[#dc7c40] block">Trabajos</a>
-  </div>
-</header>
-
-
-
-<!-- Espaciador para evitar que el header fijo tape el contenido -->
-<div class="h-[72px] md:h-[96px]"></div>
-
-<!-- Hero -->
-<section class="relative text-black py-20 md:py-28 text-center overflow-hidden">
-  <div class="absolute inset-0 z-0">
-    <img src="./recursos/3335522.jpg" alt="Fondo Hero" class="w-full h-full object-cover opacity-10" />
-  </div>
-
-  <div class="relative z-10 max-w-4xl mx-auto px-6" data-aos="fade-up">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-      Impulsamos tu negocio con
-      <span id="typing" style="color:#dc7c40;" class="font-extrabold"></span>
-    </h1>
-    <p class="text-lg sm:text-xl md:text-2xl mb-8">
-      Te anticipamos al futuro, te incluimos todo lo que vas a necesitar para escalar y que nadie te dice.
-    </p>
-    <a href="#servicios"
-       style="background-color:#0066FF; color:#ffffff;"
-       class="px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition">
-      Explora nuestros servicios
-    </a>
-  </div>
-</section>
-
-<style>
-  .blinking-cursor {
-    font-weight: bold;
-    color: #8dec88;
-    animation: blink 1s step-start infinite;
-  }
-
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
-</style>
-
-   <!-- Servicios -->
-<section id="servicios" class="py-24 bg-[#0B1B34] text-white">
-  <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-5xl font-bold text-center mb-16 text-white">Nuestros Servicios</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-
-      <!-- Card 1 -->
-      <div class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group" data-aos="fade-up">
-        <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition" style="background-image: url('./recursos/fondonaranja.png');"></div>
-        <div class="relative p-8 text-white">
-          <h3 class="text-xl font-semibold mb-3" style="color: #009EFF;">Landing Pages que convierten</h3>
-          <p>Diseño + desarrollo web enfocado en captar, vender o conectar con tu audiencia.</p>
-        </div>
+        <nav class="hidden md:flex space-x-6 text-white">
+          <a href="#servicios" class="hover:text-[#dc7c40]">Servicios</a>
+          <a href="#equipo" class="hover:text-[#dc7c40]">Nosotros</a>
+          <a href="#trabajos" class="hover:text-[#dc7c40]">Trabajos</a>
+        </nav>
       </div>
 
-      <!-- Card 2 -->
-      <div class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group" data-aos="fade-up">
-        <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition" style="background-image: url('./recursos/fondonaranja.png');"></div>
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#0B1B34] px-4 pb-4 space-y-3"
+      >
+        <a href="#servicios" class="text-white hover:text-[#dc7c40] block">Servicios</a>
+        <a href="#equipo" class="text-white hover:text-[#dc7c40] block">Nosotros</a>
+        <a href="#trabajos" class="text-white hover:text-[#dc7c40] block">Trabajos</a>
+      </div>
+    </header>
 
-        <div class="relative p-8 text-white">
-          <h3 class="text-xl font-semibold mb-3" style="color: #009EFF;">Experiencia de usuario (UX)</h3>
-          <p>Navegación sencilla, lógica y pensada para quien visita tu página.</p>
-        </div>
+    <section class="relative text-black py-20 md:py-28 text-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img
+          src="./recursos/3335522.jpg"
+          alt="Fondo Hero"
+          class="w-full h-full object-cover opacity-10"
+        />
       </div>
 
-      <!-- Card 3 -->
-      <div class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group" data-aos="fade-up">
-       <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition" style="background-image: url('./recursos/fondonaranja.png');"></div>
-        <div class="relative p-8 text-white">
-          <h3 class="text-xl font-semibold mb-3" style="color: #009EFF;">Optimización y análisis de datos</h3>
-          <p>Conectamos tu web con herramientas  potentes que utilizan las grandes empresas como el Net Promoter Score y análisis de comentarios de tus clientes,.</p>
+      <div class="relative z-10 max-w-4xl mx-auto px-6" data-aos="fade-up">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Impulsamos tu negocio con
+          <span id="typing" style="color: #dc7c40" class="font-extrabold"></span>
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl mb-8">
+          Te anticipamos al futuro, te incluimos todo lo que vas a necesitar para escalar y que
+          nadie te dice.
+        </p>
+        <a
+          href="#servicios"
+          style="background-color: #0066ff; color: #ffffff"
+          class="px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold shadow-lg hover:opacity-90 transition"
+        >
+          Explora nuestros servicios
+        </a>
+      </div>
+    </section>
+
+    
+
+    <section id="servicios" class="py-24 bg-[#0B1B34] text-white">
+      <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
+        <h2 class="text-5xl font-bold text-center mb-16 text-white">Nuestros Servicios</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group"
+            data-aos="fade-up"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition"
+              style="background-image: url('./recursos/fondonaranja.png')"
+            ></div>
+            <div class="relative p-8 text-white">
+              <h3 class="text-xl font-semibold mb-3" style="color: #009eff">
+                Landing Pages que convierten
+              </h3>
+              <p>Diseño + desarrollo web enfocado en captar, vender o conectar con tu audiencia.</p>
+            </div>
+          </div>
+
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group"
+            data-aos="fade-up"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition"
+              style="background-image: url('./recursos/fondonaranja.png')"
+            ></div>
+
+            <div class="relative p-8 text-white">
+              <h3 class="text-xl font-semibold mb-3" style="color: #009eff">
+                Experiencia de usuario (UX)
+              </h3>
+              <p>Navegación sencilla, lógica y pensada para quien visita tu página.</p>
+            </div>
+          </div>
+
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group"
+            data-aos="fade-up"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition"
+              style="background-image: url('./recursos/fondonaranja.png')"
+            ></div>
+            <div class="relative p-8 text-white">
+              <h3 class="text-xl font-semibold mb-3" style="color: #009eff">
+                Optimización y análisis de datos
+              </h3>
+              <p>
+                Conectamos tu web con herramientas potentes que utilizan las grandes empresas como
+                el Net Promoter Score y análisis de comentarios de tus clientes,.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group"
+            data-aos="fade-up"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition"
+              style="background-image: url('./recursos/fondonaranja.png')"
+            ></div>
+            <div class="relative p-8 text-white">
+              <h3 class="text-xl font-semibold mb-3" style="color: #009eff">
+                Asesoramiento personalizado
+              </h3>
+              <p>Hablamos en tu idioma. Acompañamos tu proyecto como si fuera nuestro.</p>
+            </div>
+          </div>
+
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group"
+            data-aos="fade-up"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition"
+              style="background-image: url('./recursos/fondonaranja.png')"
+            ></div>
+
+            <span
+              class="absolute top-2 left-2 bg-white bg-opacity-30 text-white text-sm px-3 py-1 rounded-md"
+            >
+              Opcional
+            </span>
+
+            <div class="relative p-8 text-white">
+              <h3 class="text-xl font-semibold mb-3" style="color: #009eff">
+                Automatizaciones móviles
+              </h3>
+              <p>Automatización de flujos, e-mails marketing, embudos.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Card 4 -->
-      <div class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group" data-aos="fade-up">
-        <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition" style="background-image: url('./recursos/fondonaranja.png');"></div>
-        <div class="relative p-8 text-white">
-          <h3 class="text-xl font-semibold mb-3" style="color: #009EFF;">Asesoramiento personalizado</h3>
-          <p>Hablamos en tu idioma. Acompañamos tu proyecto como si fuera nuestro.</p>
-        </div>
-      </div>
-
-     <!-- Card 5 --> 
-<div class="relative rounded-2xl overflow-hidden shadow-xl hover:scale-105 transform transition group" data-aos="fade-up">
-  <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-70 transition" style="background-image: url('./recursos/fondonaranja.png');"></div>
-  
-  <!-- Texto "Opcional" arriba a la izquierda -->
-  <span class="absolute top-2 left-2 bg-white bg-opacity-30 text-white text-sm px-3 py-1 rounded-md">
-    Opcional
-  </span>
-
-  <div class="relative p-8 text-white">
-    <h3 class="text-xl font-semibold mb-3" style="color: #009EFF;">Automatizaciones móviles</h3>
-    <p>Automatización de flujos, e-mails marketing, embudos.</p>
-  </div>
-</div>
-
-</section>
-
-
-
- <!-- Trabajos -->
+    <!-- Trabajos -->
 <section id="trabajos" class="py-24 bg-white">
   <h2 class="text-5xl font-bold text-center mb-16">Trabajos</h2>
 
-  <!-- Cuadrícula con padding lateral de 10px -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-[10px]">
-
+  <!-- Cuadrícula de trabajos con padding lateral de 10px -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-[10px] max-w-6xl mx-auto">
+    
     <!-- Card 1 -->
     <div class="w-full bg-[#F5F5F5] shadow-md overflow-hidden hover:scale-[1.01] transform transition duration-300">
       <img src="./recursos/trabajo1.jpg" alt="Proyecto 1" class="w-full h-64 object-cover">
@@ -198,58 +261,109 @@
 
   </div>
 </section>
+    <section
+      id="equipo"
+      class="py-24 bg-[#FAF3E0] bg-cover bg-center relative"
+      style="background-image: url('./recursos/3335522.jpg')"
+    >
+      <div class="absolute inset-0 bg-white bg-opacity-80"></div>
 
-
-
-  <!-- Nosotros -->
-<section id="equipo" 
-  class="py-24 bg-[#FAF3E0] bg-cover bg-center relative" 
-  style="background-image: url('./recursos/3335522.jpg');">
-  
-  <!-- Fondo semitransparente opcional para mejorar contraste -->
-  <div class="absolute inset-0 bg-white bg-opacity-80"></div>
-
-  <div class="relative max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-5xl font-bold mb-16">¿Quiénes somos?</h2>
-    <div class="grid md:grid-cols-2 gap-12 text-left">
-      <div class="flex items-start space-x-6" data-aos="fade-right">
-        <img src="./recursos/gabi.jpeg" alt="Nombre 1" class="w-24 h-24 rounded-full object-cover shadow-lg" />
-        <div>
-          <h3 class="text-xl font-semibold">Gabriel Vargas</h3>
-          <p class="text-blue-600">Programador, Analista de Datos, Data Scientist Jr, emprendedor y founder de textfeel.com.ar</p>
-          <p class="mt-2 text-gray-700">Apasionado por medir y mejorar la satisfacción de cliente haciendo uso de herramientas de procesamiento del lenguaje natural.</p>
-          <a href="https://www.linkedin.com/in/usuario1" target="_blank" class="text-blue-500 hover:underline">Ver perfil LinkedIn</a>
+      <div class="relative max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-5xl font-bold mb-16">¿Quiénes somos?</h2>
+        <div class="grid md:grid-cols-2 gap-12 text-left">
+          <div class="flex items-start space-x-6" data-aos="fade-right">
+            <img
+              src="./recursos/gabi.jpeg"
+              alt="Nombre 1"
+              class="w-24 h-24 rounded-full object-cover shadow-lg"
+            />
+            <div>
+              <h3 class="text-xl font-semibold">Gabriel Vargas</h3>
+              <p class="text-blue-600">
+                Programador, Analista de Datos, Data Scientist Jr, emprendedor y founder de
+                textfeel.com.ar
+              </p>
+              <p class="mt-2 text-gray-700">
+                Apasionado por medir y mejorar la satisfacción de cliente haciendo uso de
+                herramientas de procesamiento del lenguaje natural.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/usuario1"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Ver perfil LinkedIn</a
+              >
+            </div>
+          </div>
+          <div class="flex items-start space-x-6" data-aos="fade-left">
+            <img
+              src="./recursos/YO.jpeg"
+              alt="Nombre 2"
+              class="w-24 h-24 rounded-full object-cover shadow-lg"
+            />
+            <div>
+              <h3 class="text-xl font-semibold">Sofia Crivisqui</h3>
+              <p class="text-blue-600">
+                Desarrolladora web Ux/Ui| Experta en Photoshop e Illustrator
+              </p>
+              <p class="mt-2 text-gray-700">
+                Diseño y programo interfaces accesibles y atractivas que combinan estética,
+                funcionalidad y empatía por el usuario.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/usuario2"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Ver perfil LinkedIn</a
+              >
+            </div>
+          </div>
         </div>
       </div>
-      <div class="flex items-start space-x-6" data-aos="fade-left">
-        <img src="./recursos/YO.jpeg" alt="Nombre 2" class="w-24 h-24 rounded-full object-cover shadow-lg" />
-        <div>
-          <h3 class="text-xl font-semibold">Sofia Crivisqui</h3>
-          <p class="text-blue-600">Desarrolladora web Ux/Ui| Experta en Photoshop e Illustrator </p>
-          <p class="mt-2 text-gray-700">Diseño y programo interfaces accesibles y atractivas que combinan estética, funcionalidad y empatía por el usuario.</p>
-          <a href="https://www.linkedin.com/in/usuario2" target="_blank" class="text-blue-500 hover:underline">Ver perfil LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <footer class="bg-[#0B1B34] text-white py-6 text-center">
+      <p>&copy; 2025 Base Cero. Todos los derechos reservados.</p>
+    </footer>
 
-    <!-- Footer -->
-<footer class="bg-[#0B1B34] text-white py-6 text-center">
-  <p>&copy; 2025 Base Cero. Todos los derechos reservados.</p>
-</footer>
-
-
-    <!-- Scripts -->
     <script>
       AOS.init({ duration: 1000 });
+
+      // Script para el menú de hamburguesa
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        // Opcional: para alternar entre 'flex' y 'hidden' si quieres un display flex en móvil
+        // mobileMenu.classList.toggle('flex');
+      });
+
+      // Cerrar el menú si se hace clic en un enlace o fuera del menú (en móvil)
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            // mobileMenu.classList.remove('flex'); // Si usaste toggle('flex')
+          }
+        });
+      });
+
+      // Cierra el menú al hacer clic fuera de él (opcional, pero mejora la UX)
+      document.addEventListener('click', (event) => {
+        const isClickInsideMenu = mobileMenu.contains(event.target);
+        const isClickOnMenuButton = menuBtn.contains(event.target);
+
+        if (!isClickInsideMenu && !isClickOnMenuButton && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          // mobileMenu.classList.remove('flex');
+        }
+      });
     </script>
 
-
     <script>
-      const palabras = ["diseño", "datos", "decisión"];
-      const typingEl = document.getElementById("typing");
+      const palabras = ['diseño', 'datos', 'decisión'];
+      const typingEl = document.getElementById('typing');
 
       let palabraIndex = 0;
       let charIndex = 0;
@@ -278,14 +392,5 @@
 
       type();
     </script>
-    <!-- Script -->
-<script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
   </body>
 </html>
