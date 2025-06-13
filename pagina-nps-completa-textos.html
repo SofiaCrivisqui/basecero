@@ -26,17 +26,33 @@
 </head>
 
 <body class="bg-white text-gray-900 pt-20">
-  <!-- NAVBAR -->
-  <header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6">
-      <img src="./recursos/logoblanco.png" alt="Logo" class="w-32 md:w-40" />
-      <nav class="hidden md:flex space-x-6 text-white">
-        <a href="#nps" class="hover:text-[#dc7c40]">NPS</a>
-        <a href="#exito" class="hover:text-[#dc7c40]">Caso de Éxito</a>
-        <a href="#reportes" class="hover:text-[#dc7c40]">Tableros y Reportes</a>
-      </nav>
-    </div>
-  </header>
+<!-- NAVBAR -->
+<header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6">
+    <img src="./recursos/logoblanco.png" alt="Logo" class="w-32 md:w-40" />
+
+    <!-- Botón hamburguesa para mobile -->
+    <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Menú en desktop -->
+    <nav class="hidden md:flex space-x-6 text-white">
+      <a href="#nps" class="hover:text-[#dc7c40]">NPS</a>
+      <a href="#exito" class="hover:text-[#dc7c40]">Caso de Éxito</a>
+      <a href="#reportes" class="hover:text-[#dc7c40]">Tableros y Reportes</a>
+    </nav>
+  </div>
+
+  <!-- Menú desplegable en mobile -->
+  <div id="mobile-menu" class="md:hidden hidden flex-col bg-[#0B1B34] px-4 pb-4 space-y-3">
+    <a href="#nps" class="text-white hover:text-[#dc7c40] block">NPS</a>
+    <a href="#exito" class="text-white hover:text-[#dc7c40] block">Caso de Éxito</a>
+    <a href="#reportes" class="text-white hover:text-[#dc7c40] block">Tableros y Reportes</a>
+  </div>
+</header>
 
  
 
@@ -180,6 +196,21 @@
   <footer class="bg-[#0B1B34] text-white py-6 text-center mt-20">
     <p>&copy; 2025 Base Cero. Todos los derechos reservados.</p>
   </footer>
+  <!-- Script para toggle del menú -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+</script>
 
   <script>
     AOS.init({ duration: 1000, once: true });
