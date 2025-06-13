@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Net Promoter Score</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      color: #0B1B34;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 pt-20">
+  <!-- NAVBAR -->
+  <header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6">
+      <img src="./recursos/logoblanco.png" alt="Logo" class="w-32 md:w-40" />
+      <nav class="hidden md:flex space-x-6 text-white">
+        <a href="#nps" class="hover:text-[#dc7c40]">NPS</a>
+        <a href="#exito" class="hover:text-[#dc7c40]">Caso de Éxito</a>
+        <a href="#reportes" class="hover:text-[#dc7c40]">Tableros y Reportes</a>
+      </nav>
+    </div>
+  </header>
+
+ 
+
+ <main class="pt-32 space-y-20">
+     <!-- BREADCRUMB -->
+  <nav class="relative z-40 bg-white  px-6 text-sm text-gray-700 shadow-sm " aria-label="Breadcrumb">
+
+
+    <ol class="flex items-center space-x-2 max-w-7xl mx-auto">
+      <li><a href="index.html" class="hover:underline text-[#0B1B34] font-medium">Inicio</a></li>
+      <li><span>/</span></li>
+      <li class="text-[#0B1B34] font-semibold">Net Promoter Score</li>
+    </ol>
+  </nav>
+    <!-- INTRO -->
+    <section id="nps" class="w-screen bg-[#0B1B34] text-white py-20 px-6 overflow-hidden" data-aos="fade-up">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <div class="rounded-2xl p-6 bg-gradient-to-r from-[#fbbf24] to-[#fb923c] text-[#0B1B34]">
+            <h1 class="text-4xl font-bold leading-tight">Inteligencia de Cliente para Decisiones Estratégicas</h1>
+          </div>
+          <p class="mt-6 text-lg leading-relaxed"> En el viaje emprendedor, cada decisión cuenta, sabemos que
+ necesitas herramientas que te den una ventaja desde el primer
+ día. Por eso, vamos un paso más allá para asegurar tu
+ crecimiento estratégico.
+</p>
+          <p class="mt-4 text-lg leading-relaxed">Nuestro servicio incluye un sistema de análisis profundo que te permite entender a tus clientes como nunca antes:</p>
+        </div>
+        <div class="space-y-10">
+          <div class="flex items-start space-x-4" data-aos="zoom-in">
+            <img src="./recursos/net.png" class="w-20 h-20" />
+            <div>
+              <h2 class="text-xl font-semibold text-white">Net Promoter Score</h2>
+              <p class="text-white">Net Promoter Score (NPS) Integrado: Podrás medir la lealtad real de
+ tus clientes con la pregunta clave: "¿Qué tan probable es que nos
+ recomiendes?". Esto te permite saber quiénes son tus promotores,
+ pasivos y detractores</p>
+            </div>
+          </div>
+          <hr class="border-white/30" />
+          <div class="flex items-start space-x-4" data-aos="zoom-in" data-aos-delay="100">
+            <img src="./recursos/comentarios.png" class="w-20 h-20" />
+            <div>
+              <h2 class="text-xl font-semibold text-white">Comentarios Abiertos y Análisis Profundo</h2>
+              <p class="text-white"> Adicionalmente, preguntamos a tus clientes por qué calificaron de
+ esa manera. No solo recogemos sus palabras, sino que aplicamos
+ procesamiento del lenguaje natural (PLN), una herramienta de
+ ciencia de datos avanzada. Esto significa que analizamos
+ automáticamente esos textos para extraer información de valor
+ sobre sus opiniones, necesidades y puntos de dolor</p>
+            </div>
+          </div>
+          <hr class="border-white/30" />
+          <div class="flex items-start space-x-4" data-aos="zoom-in" data-aos-delay="200">
+            <img src="./recursos/SEGMENTACION.png" class="w-20 h-20" />
+            <div>
+              <h2 class="text-xl font-semibold text-white">Segmentación de Mercado Clara</h2>
+              <p class="text-white">Sumamos preguntas clave sobre edad, género y ubicación para
+ que sepas quiénes son tus clientes. Así, no solo sabrás qué
+ piensan, sino quiénes lo piensan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASO DE ÉXITO -->
+    <section id="exito" class="w-full bg-white py-16 px-4" data-aos="fade-up">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div class="text-center md:text-left space-y-6">
+          <h2 class="text-4xl md:text-5xl font-extrabold">Éxito en Enferexpress</h2>
+          <img src="./recursos/ENFEREXPRES.png" class="mx-auto md:mx-0 w-48" />
+          <div class="flex justify-center md:justify-start items-center gap-2">
+            <img src="./recursos/WEB.png" class="w-5 h-5" />
+            <span class="text-lg">Enferexpress.com</span>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center space-y-6 text-center md:text-left">
+          <p class="text-lg leading-relaxed">Te contamos la experiencia de Enferexpress, una empresa de
+ nuestra región que brinda servicios de enfermería y médico a
+ domicilio. Gracias a este enfoque, lograron segmentar a sus
+ clientes de manera efectiva, identificando patrones como
+ pacientes de mayor y menor frecuencia diferenciados por
+ patologías, días de mayor y menor consulta, y lograron
+ mejorar significativamente los tiempos de respuesta. Esto les
+ permitió obtener métricas de rendimiento demostrables que
+ fueron clave para conseguir nuevos clientes y establecer
+ valiosas alianzas con otras empresas.</p>
+          <div class="flex justify-center md:justify-start gap-1">
+            <img src="./recursos/ESTRELLA.png" class="w-7 h-7" />
+            <img src="./recursos/ESTRELLA.png" class="w-7 h-7" />
+            <img src="./recursos/ESTRELLA.png" class="w-7 h-7" />
+            <img src="./recursos/ESTRELLA.png" class="w-7 h-7" />
+            <img src="./recursos/ESTRELLA.png" class="w-7 h-7" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLEROS Y REPORTES -->
+    <section id="reportes" class="relative bg-cover bg-center py-16 px-6" style="background-image: url('./recursos/3335522.jpg');" data-aos="fade-up">
+      <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+      <div class="relative z-10 max-w-7xl mx-auto text-center mb-12 text-[#0B1B34]">
+        <h2 class="text-3xl font-bold">Tableros en tiempo real y reportes</h2>
+      </div>
+      <div class="relative z-10 grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <!-- Card 1 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md text-white bg-cover bg-center" style="background-image: url('./recursos/fondonaranja.png');">
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div class="relative z-10 p-6 space-y-4">
+            <h3 class="text-xl font-bold text-[#00B0FF]">Análisis de Comentarios</h3>
+            <p class="text-sm leading-relaxed">Encontraron palabras que destacan fortalezas y necesidades de sus pacientes.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md text-white bg-cover bg-center" style="background-image: url('./recursos/fondonaranja.png');">
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div class="relative z-10 p-6 space-y-4">
+            <h3 class="text-xl font-bold text-[#00B0FF]">Segmentación de Mercado</h3>
+            <p class="text-sm leading-relaxed">Descubrieron coincidencias y características propias de cada barrio.</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md text-white bg-cover bg-center" style="background-image: url('./recursos/fondonaranja.png');">
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div class="relative z-10 p-6 space-y-4">
+            <h3 class="text-xl font-bold text-[#00B0FF]">Tiempos de Adquisición</h3>
+            <p class="text-sm leading-relaxed">Encontraron los horarios y días de mayor demanda y consultas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto text-center mt-12 text-[#0B1B34] text-lg">
+        <p> Al igual que ellos también recibirás tu tablero informativo y un reporte personalizado con conclusiones claras y
+ accionables basadas en datos reales y tangibles sobre tu audiencia. Con esta información, podrás tomar
+ decisiones estratégicas inteligentes para mejorar tu servicio, afinar tu marketing y asegurar que tu
+ emprendimiento no solo sobreviva, sino que prospere y se adelante a la competencia.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0B1B34] text-white py-6 text-center mt-20">
+    <p>&copy; 2025 Base Cero. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
