@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planes</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      color: #0B1B34;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 pt-20">
+  <!-- NAVBAR -->
+  <header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6">
+      <a href="index.html">
+  <img src="./recursos/logoblanco.png" alt="Logo" class="w-32 md:w-40" />
+</a>
+
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <nav class="hidden md:flex space-x-6 text-white">
+        <a href="index.html#servicios" class="text-white hover:text-[#dc7c40] block">Servicios</a>
+<a href="index.html#equipo" class="text-white hover:text-[#dc7c40] block">Nosotros</a>
+<a href="index.html#trabajos" class="text-white hover:text-[#dc7c40] block">Trabajos</a>
+
+      </nav>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden flex-col bg-[#0B1B34] px-4 pb-4 space-y-3">
+      <a href="#nps" class="text-white hover:text-[#dc7c40] block">NPS</a>
+      <a href="#exito" class="text-white hover:text-[#dc7c40] block">Caso de Éxito</a>
+      <a href="#reportes" class="text-white hover:text-[#dc7c40] block">Tableros y Reportes</a>
+      <a href="#planes" class="text-white hover:text-[#dc7c40] block">Planes</a>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PLANES CON MODALES Y FONDO -->
+<section id="planes" class="relative py-24 bg-cover bg-center" style="background-image: url('./recursos/3335522.jpg');">
+  <!-- Capa blanca con opacidad -->
+  <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-[#0B1B34]" style="font-family: 'Sora', sans-serif;">Nuestros Planes</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div onclick="openModal('modalPackEmprendedor')" class="bg-gradient-to-br from-orange-500 to-orange-400 text-white p-8 rounded-[40px] cursor-pointer hover:scale-105 transition shadow-xl group flex flex-col justify-between">
+        <div>
+          <div class="text-5xl mb-4">🚀</div>
+          <h3 class="text-xl font-bold mb-2">Pack emprendedor</h3>
+          <p class="text-lg">Landing Page con todo lo que necesitás</p>
+        </div>
+        <div class="mt-6 inline-block px-4 py-2 bg-white text-orange-600 font-semibold rounded-full group-hover:bg-orange-100 transition text-sm self-center">Ver detalles</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div onclick="openModal('modalPackWeb')" class="bg-gradient-to-br from-orange-600 to-orange-500 text-white p-8 rounded-[40px] cursor-pointer hover:scale-105 transition shadow-xl group flex flex-col justify-between">
+        <div>
+          <div class="text-5xl mb-4">💻</div>
+          <h3 class="text-xl font-bold mb-2">Pack web</h3>
+          <p class="text-lg">Planes Webs para pymes</p>
+        </div>
+        <div class="mt-6 inline-block px-4 py-2 bg-white text-orange-700 font-semibold rounded-full group-hover:bg-orange-100 transition text-sm self-center">Ver detalles</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div onclick="openModal('modalPackAlianzas')" class="bg-gradient-to-br from-orange-700 to-orange-600 text-white p-8 rounded-[40px] cursor-pointer hover:scale-105 transition shadow-xl group flex flex-col justify-between">
+        <div>
+          <div class="text-5xl mb-4">🤝</div>
+          <h3 class="text-xl font-bold mb-2">Pack Alianzas</h3>
+          <p class="text-lg">Para organismos públicos y privados</p>
+        </div>
+        <div class="mt-6 inline-block px-4 py-2 bg-white text-orange-800 font-semibold rounded-full group-hover:bg-orange-100 transition text-sm self-center">Ver detalles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- MODALES -->
+    <div id="modalPackEmprendedor" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white max-w-lg p-8 rounded-xl relative text-left">
+        <button onclick="closeModal('modalPackEmprendedor')" class="absolute top-4 right-4 text-xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+        <h3 class="text-2xl font-bold mb-4 text-[#0B1B34]">Pack Emprendedor</h3>
+        <ul class="text-gray-800 list-disc ml-6 space-y-1 text-sm leading-relaxed">
+          <li>Diseño personalizado</li><li>Hosting gratis</li><li>4 solapas</li><li>10 imágenes</li><li>1 Video</li>
+          <li>Responsive</li><li>Redes sociales</li><li>Whatsapp flotante</li><li>Certificado SSL</li><li>Email corporativo</li>
+          <li>Google Maps</li><li>Formulario contacto</li><li>Actualización gratuita</li>
+          <li>Net Promoter Score + análisis</li><li>2 Reportes cada 100 respuestas o 1 cada 6 meses</li><li>Segmentación por NPS</li>
+        </ul>
+        <div class="bg-orange-100 border-l-4 border-orange-500 mt-6 p-4 rounded-xl">
+          <p class="text-orange-700 text-xl font-extrabold">$14.990</p>
+          <p class="text-sm text-gray-600">Pagás solo los meses que uses. Plan de 12, 16 o 18 pagos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalPackWeb" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white max-w-lg p-8 rounded-xl relative text-left">
+        <button onclick="closeModal('modalPackWeb')" class="absolute top-4 right-4 text-xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+        <h3 class="text-2xl font-bold mb-4 text-[#0B1B34]">Pack Web</h3>
+        <ul class="text-gray-800 list-disc ml-6 space-y-1 text-sm leading-relaxed">
+          <li>Diseño personalizado</li><li>Hosting gratis</li><li>6 Páginas</li><li>6 solapas</li><li>40 imágenes</li>
+          <li>3 Videos</li><li>Responsive</li><li>Redes sociales</li><li>Whatsapp flotante</li><li>Certificado SSL</li>
+          <li>Email corporativo</li><li>Google Maps</li><li>Formulario contacto</li><li>Actualización gratuita</li>
+          <li>Net Promoter Score + análisis</li><li>4 Reportes cada 100 respuestas o 1 cada 3 meses</li><li>Segmentación por NPS</li>
+        </ul>
+        <div class="bg-orange-200 border-l-4 border-orange-600 mt-6 p-4 rounded-xl">
+          <p class="text-orange-800 text-xl font-extrabold">$24.990 mensual</p>
+          <p class="text-sm text-gray-600">Pagás solo los meses que uses. Plan de 12, 16 o 18 pagos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalPackAlianzas" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div class="bg-white max-w-lg p-8 rounded-xl relative text-left">
+        <button onclick="closeModal('modalPackAlianzas')" class="absolute top-4 right-4 text-xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+        <h3 class="text-2xl font-bold mb-4 text-[#0B1B34]">Pack Alianzas</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">Planes estratégicos para alianzas con entidades públicas y privadas. Ideal para proyectos de desarrollo local o expansión comunitaria. Contactanos para definir juntos el enfoque.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#0B1B34] text-white py-6 text-center">
+    <p>&copy; 2025 Base Cero. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1000 });
+
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  <!-- Botón flotante de WhatsApp -->
+<a
+  href="https://wa.me/543512130298"
+  class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-transform transform hover:scale-110"
+  target="_blank"
+  aria-label="Contactar por WhatsApp"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    class="w-6 h-6"
+  >
+    <path
+      d="M20.52 3.48A11.82 11.82 0 0012 0a11.88 11.88 0 00-10.19 17.9L0 24l6.3-1.65A11.89 11.89 0 0012 24a11.82 11.82 0 008.52-20.52zM12 21.5a9.48 9.48 0 01-4.88-1.33l-.35-.21-3.73.97.99-3.64-.23-.37A9.5 9.5 0 1112 21.5zm5.09-6.77c-.27-.14-1.6-.79-1.85-.88s-.43-.14-.61.14-.7.88-.86 1.06-.32.21-.59.07a7.84 7.84 0 01-2.3-1.42 8.68 8.68 0 01-1.6-2c-.17-.29 0-.45.13-.6s.29-.32.43-.48a2 2 0 00.29-.49.54.54 0 000-.51c-.07-.14-.6-1.46-.82-2-.22-.52-.44-.45-.6-.46h-.52a1 1 0 00-.74.35 3.13 3.13 0 00-.94 2.33 5.5 5.5 0 001.14 2.66 12.74 12.74 0 005.08 4.53 6.52 6.52 0 001.06.39 2.56 2.56 0 001.16.07 2.15 2.15 0 001.4-1 .91.91 0 00.06-.98c-.09-.16-.24-.23-.5-.37z"
+    />
+  </svg>
+</a>
+</body>
+</html>
+
