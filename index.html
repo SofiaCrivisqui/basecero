@@ -73,51 +73,68 @@
   </head>
 <body class="bg-white text-gray-900 pt-0 md:pt-20">
 
-  <header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6">
-      <img src="./recursos/logoblanco.png" alt="Base Cero Logo" class="w-32 md:w-40" />
 
-      <button id="menu-btn" class="md:hidden text-white focus:outline-none">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+    <header class="bg-[#0B1B34] fixed top-0 left-0 w-full z-50 shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center py-4 md:py-6"
+      >
+        <img src="./recursos/logoblanco.png" alt="Base Cero Logo" class="w-32 md:w-40" />
 
-      <nav class="hidden md:flex space-x-6 text-white">
-        <a href="#servicios" class="hover:text-[#dc7c40]">Servicios</a>
-        <a href="#equipo" class="hover:text-[#dc7c40]">Nosotros</a>
-        <a href="#trabajos" class="hover:text-[#dc7c40]">Trabajos</a>
-      </nav>
-    </div>
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
-    <div id="mobile-menu" class="md:hidden hidden flex-col bg-[#0B1B34] px-4 pb-4 space-y-3">
-      <a href="#servicios" class="text-white hover:text-[#dc7c40] block">Servicios</a>
-      <a href="#equipo" class="text-white hover:text-[#dc7c40] block">Nosotros</a>
-      <a href="#trabajos" class="text-white hover:text-[#dc7c40] block">Trabajos</a>
-    </div>
-  </header>
+        <nav class="hidden md:flex space-x-6 text-white">
+          <a href="#servicios" class="hover:text-[#dc7c40]">Servicios</a>
+          <a href="#equipo" class="hover:text-[#dc7c40]">Nosotros</a>
+          <a href="#trabajos" class="hover:text-[#dc7c40]">Trabajos</a>
+        </nav>
+      </div>
 
-  <section class="relative bg-cover bg-center bg-no-repeat py-16 md:py-24 flex items-center justify-center text-white text-center" style="background-image: url('./recursos/fondo-hero.png');">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col bg-[#0B1B34] px-4 pb-4 space-y-3"
+      >
+        <a href="#servicios" class="text-white hover:text-[#dc7c40] block">Servicios</a>
+        <a href="#equipo" class="text-white hover:text-[#dc7c40] block">Nosotros</a>
+        <a href="#trabajos" class="text-white hover:text-[#dc7c40] block">Trabajos</a>
+      </div>
+    </header>
 
-    <!-- Contenido -->
-    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-        Todo emprendedor merece más que solo presencia online:<br />
-        <span id="typing" class="text-[#FFA500]">merece entender a sus clientes</span>
-      </h1>
-      <p class="text-lg sm:text-xl mb-2 font-medium text-white/90">
-        Por eso creamos el mejor pack:
-      </p>
-      <p class="text-2xl sm:text-3xl font-extrabold text-[#00B0FF] tracking-tight" style="font-family: 'Sora', sans-serif;">
-        diseño web + análisis de clientes
-      </p>
+  <section class="relative bg-cover bg-center bg-no-repeat h-[100vh] sm:h-[90vh] md:h-[80vh] flex items-center justify-center text-white text-center" style="background-image: url('./recursos/fondo-hero.png');">
+  <!-- Capa oscura -->
 
-      <a href="./planes.html" class="mt-8 inline-block bg-[#FFA500] hover:[#00B0FF]-600 text-[#0B1B34] font-bold text-lg px-8 py-4 rounded-full shadow-lg transition duration-300 hover:scale-105">
-        Quiero mi pack
-      </a>
-    </div>
-  </section>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight mb-6">
+      Todo emprendedor merece más que solo presencia online:<br />
+      <span id="typing" class="text-[#FFA500]">merece entender a sus clientes</span>
+    </h1>
+    <p class="text-base sm:text-lg mb-2 font-medium text-white/90">
+      Por eso creamos el mejor pack:
+    </p>
+    <p class="text-xl sm:text-2xl font-extrabold text-[#00B0FF] tracking-tight" style="font-family: 'Sora', sans-serif;">
+      diseño web + análisis de clientes
+    </p>
+
+    <a href="./planes.html" class="mt-6 inline-block bg-[#FFA500] hover:bg-[#ffb300] text-[#0B1B34] font-bold text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full shadow-lg transition duration-300 hover:scale-105">
+      Quiero mi pack
+    </a>
+  </div>
+</section>
 
 
 <section class="relative bg-[#07152D] py-24 px-6 md:px-10 text-white overflow-hidden">
