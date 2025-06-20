@@ -547,6 +547,40 @@
   </svg>
 </a>
 
+<!-- BANNER DE COOKIES BASE CERO -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white border-t border-[#0B1B34]/20 shadow-xl z-50 px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm">
+  <p class="text-[#0B1B34]">
+    En Base Cero usamos cookies para mejorar tu experiencia y conocer mejor a quienes nos visitan. ¿Aceptás su uso?
+  </p>
+  <div class="flex gap-3">
+    <button id="accept-cookies" class="bg-[#FFA500] hover:bg-[#e69500] text-[#0B1B34] px-4 py-2 rounded-full font-semibold transition">
+      Aceptar
+    </button>
+    <button id="reject-cookies" class="bg-[#0B1B34] hover:bg-[#1b2d50] text-white px-4 py-2 rounded-full font-semibold transition">
+      Rechazar
+    </button>
+  </div>
+</div>
+
+<script>
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const rejectBtn = document.getElementById("reject-cookies");
+
+  if (localStorage.getItem("cookies-preference")) {
+    cookieBanner.style.display = "none";
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookies-preference", "accepted");
+    cookieBanner.style.display = "none";
+  });
+
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookies-preference", "rejected");
+    cookieBanner.style.display = "none";
+  });
+</script>
 
   </body>
 </html>
